@@ -24,3 +24,11 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+      
+    - name: Save test reports
+      uses: actions/upload-artifact@v2.2.1
+      with:
+        name: test-reports
+        path: build/reports/tests/test/
+
+      
